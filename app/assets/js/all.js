@@ -211,3 +211,15 @@ summary.addEventListener('click', function(e){
     }
   });
 });
+
+
+
+//-------------------------------------------------------------test
+const title = document.querySelector('.title');
+console.log(title);
+title.addEventListener('click', function(e){
+  if(e.target.getAttribute('class') !== 'm-1 view'){
+    return;
+  }
+  console.log(e.target.getAttribute('value'));
+});
