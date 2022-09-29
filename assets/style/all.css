@@ -12433,15 +12433,25 @@ body {
   letter-spacing: 0.07em;
 }
 
+/*-- pages --*/
 h1, .h1 {
   text-align: center;
-  font-size: 48px;
+  font-size: 32px;
   margin-bottom: 24px;
   font-family: "Baloo Tamma 2";
-  letter-spacing: 8px;
   font-weight: bold;
 }
 
-/*-- pages --*/
+@media (min-width: 768px) {
+  h1, .h1 {
+    font-size: 48px;
+    margin-bottom: 24px;
+    letter-spacing: 8px;
+  }
+}
+
+.container {
+  margin: 48px auto 24px auto;
+}
 
 /*# sourceMappingURL=all.css.map */
