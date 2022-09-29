@@ -6,9 +6,14 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   background: linear-gradient(174deg, #FFD370 2%, #FFD370 46%, #FFFFFF 46%, #FFFFFF 100%, #E8E8E8 100%);
-  letter-spacing: 0.7em;
+  letter-spacing: 0.07em;
 }
 
 h1 {
   text-align: center;
+  font-size: 48px;
+  margin-bottom: 24px;
+  font-family: "Baloo Tamma 2";
+  letter-spacing: 8px;
+  font-weight: bold;
 }
