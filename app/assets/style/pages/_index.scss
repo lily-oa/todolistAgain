@@ -12,5 +12,17 @@ h1 {
 }
 
 .container {
-  margin: 48px auto 24px auto;
+  margin-top: 24px;
+  @include media-breakpoint-up(md) {
+    margin: 48px auto 24px auto;
+    width: 500px;
+  }
+}
+.card {
+  margin-bottom: 8px;
+  max-width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
 }
