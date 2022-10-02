@@ -36,3 +36,12 @@ input[type="text"]{
 input[type="text"]::-webkit-input-placeholder{
   color: $color_dark_gray;
 }
+input[type="text"]:-ms-input-placeholder{
+  color: $color_dark_gray;
+}
+input[type="text"]::-ms-placeholder{
+  color: $color_dark_gray;
+}
+input[type="text"]::placeholder{
+  color: red;
+}
