@@ -41,3 +41,14 @@ input[type="text"]::placeholder{
   padding: 4px 4px 4px 16px;
   display: flex;
 }
+.btn_add{
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
+  border-radius: 10px;
+  text-align: center;
+  background: $secondary;
+  color: #fff;
+  font-size: 32px;
+  text-decoration: none;
+}
