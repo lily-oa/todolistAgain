@@ -12474,6 +12474,9 @@ h1, .h1 {
 input[type="text"] {
   width: 100%;
   border: 0;
+  outline: 0;
+  padding-right: 16px;
+  color: #333333;
 }
 
 /*# sourceMappingURL=all.css.map */
