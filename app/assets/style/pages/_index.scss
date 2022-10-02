@@ -33,6 +33,6 @@ input[type="text"]{
   padding-right: 16px;
   color: $secondary;
 }
-input[type="text"]::-input-placeholder{
+input[type="text"]::-webkit-input-placeholder{
   color: $color_dark_gray;
 }
