@@ -12471,4 +12471,9 @@ h1, .h1 {
           box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
 }
 
+input[type="text"] {
+  width: 100%;
+  border: 0;
+}
+
 /*# sourceMappingURL=all.css.map */
