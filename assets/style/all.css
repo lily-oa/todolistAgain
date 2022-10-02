@@ -12483,4 +12483,27 @@ input[type="text"]::-webkit-input-placeholder {
   color: #9F9A91;
 }
 
+input[type="text"]::-moz-placeholder {
+  color: #9F9A91;
+}
+
+input[type="text"]:-ms-input-placeholder {
+  color: #9F9A91;
+}
+
+input[type="text"]::-ms-input-placeholder {
+  color: #9F9A91;
+}
+
+input[type="text"]::placeholder {
+  color: #9F9A91;
+}
+
+.input {
+  padding: 4px 4px 4px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /*# sourceMappingURL=all.css.map */
