@@ -18,6 +18,14 @@ h1 {
     width: 500px;
   }
 }
+.card1 {
+  margin-bottom: 8px;
+  max-width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+}
 .card {
   margin-bottom: 8px;
   max-width: 100%;
@@ -41,7 +49,7 @@ input[type="text"]::placeholder{
   padding: 4px 4px 4px 16px;
   display: flex;
 }
-.btn_add{
+.btn_and{
   width: 40px;
   height: 40px;
   line-height: 35px;
@@ -51,4 +59,84 @@ input[type="text"]::placeholder{
   color: #fff;
   font-size: 32px;
   text-decoration: none;
+}
+.card_list{
+  padding: 0;
+  
+}
+.tab{
+  display: flex;
+  text-align: center;
+  color: $color_dark_gray;
+  font-size: 14px;
+  li{
+    padding: 16px;
+    width: 100%;
+    border-bottom: 2px solid $color_gray;
+    &.active{
+      border-bottom: 2px solid $secondary;
+      color: $secondary;
+      font-weight: bold;
+    }
+  }
+}
+.cart_content{
+  padding: 12px 20px 12px 12px;
+  @include media-breakpoint-up(md) {
+    padding: 12px 24px 24px 24px;
+  }
+}
+//內容
+.list li{
+  position: relative;
+  padding-right: 0;
+  @include media-breakpoint-up(md){
+    padding-right: 32px;
+  }
+}
+
+.list li a.delete{
+  position: absolute;
+  opacity: 1;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-decoration: none;
+  color: $secondary;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: #000;
+  background-image: url('https://i.imgur.com/7Q4RjFx.jpg');
+  background-size: contain;
+  @include media-breakpoint-up(md){
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.list li:hover a.delete{
+  opacity: 1;
+}
+
+.list_footer a{
+  color: $color_dark_gray;
+  text-decoration: none;
+  padding: 24px 0px 16px 8px;
+  &:hover{
+    color: $secondary;
+  }
+}
+
+.checkbox{
+  position: relative;
+  user-select: none;
+  width: 100%;
+  display: block;
+  padding-left: 44px;
+  cursor: pointer;
+}
+.checkbox span{
+  padding-right: 16px;
 }
