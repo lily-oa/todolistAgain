@@ -12622,12 +12622,24 @@ input[type="text"]::placeholder {
           user-select: none;
   width: 100%;
   display: block;
-  padding-left: 44px;
+  padding-right: 44px;
   cursor: pointer;
 }
 
 .checkbox span {
-  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.checkbox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 /*# sourceMappingURL=all.css.map */
