@@ -12683,7 +12683,6 @@ input[type="text"]::placeholder {
   border-radius: 1px;
   border-bottom: 3px solid #FCD370;
   border-right: 3px solid #FCD370;
-  border: 1px solid #333333;
   pointer-events: none;
   opacity: 0;
   -webkit-transition: 0.3s ease;
