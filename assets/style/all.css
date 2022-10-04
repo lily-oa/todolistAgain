@@ -12627,7 +12627,17 @@ input[type="text"]::placeholder {
 }
 
 .checkbox span {
-  padding-left: 16px;
+  display: block;
+  padding: 16px 0;
+  padding-right: 16px;
+  border-bottom: 1px solid #eee;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .checkbox span {
+    padding-right: 0px;
+  }
 }
 
 .checkbox input {
@@ -12679,6 +12689,22 @@ input[type="text"]::placeholder {
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
   transition: 0.3s ease;
+}
+
+.checkbox input:checked ~ span {
+  color: #9F9A91;
+  text-decoration: line-through;
+}
+
+.checkbox input:checked ~ span::before {
+  border-color: transparent;
+  -webkit-transform: translateY(-50%) scale(0);
+      -ms-transform: translateY(-50%) scale(0);
+          transform: translateY(-50%) scale(0);
+}
+
+.checkbox input:checked ~ span::after {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=all.css.map */
