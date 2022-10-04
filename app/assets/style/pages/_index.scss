@@ -172,6 +172,7 @@ input[type="text"]::placeholder{
     pointer-events: none;
     transition: 0.3s ease;
   }
+  //用css 2D 做出打勾的動態圖案
   span::after{
     content: "";
     position: absolute;
@@ -183,7 +184,6 @@ input[type="text"]::placeholder{
     border-radius: 1px;
     border-bottom: 3px solid $primary;
     border-right: 3px solid $primary;
-    border: 1px solid $secondary;
     pointer-events: none;
     opacity: 0;
     transition: 0.3s ease;
