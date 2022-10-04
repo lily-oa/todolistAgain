@@ -137,7 +137,14 @@ input[type="text"]::placeholder{
   padding-left: 44px;
   cursor: pointer;
   span{
-    padding-left: 16px;
+    display: block;
+    padding: 16px 0;
+    padding-right: 16px;
+    border-bottom: 1px solid #eee;
+    line-height: 1.5;
+    @include media-breakpoint-up(md) {
+      padding-right: 0px;
+    }
   }
   input{
     position: absolute;
@@ -181,4 +188,15 @@ input[type="text"]::placeholder{
     opacity: 0;
     transition: 0.3s ease;
   }
+}
+.checkbox input:checked ~ span {
+  color: $color_dark_gray;
+  text-decoration: line-through;
+}
+.checkbox input:checked ~span::before{
+  border-color: transparent;  //透明
+  transform: translateY(-50%) scale(0);
+}
+.checkbox input:checked ~ span::after{
+  opacity: 1;
 }
