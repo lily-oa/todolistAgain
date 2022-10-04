@@ -193,7 +193,8 @@ input[type="text"]::placeholder{
   color: $color_dark_gray;
   text-decoration: line-through;
 }
-.checkbox input:checked ~span::before{
+//在還沒有checked之前，打勾圖案呈現透明，checked之後會呈現出來
+.checkbox input:checked ~ span::before{
   border-color: transparent;  //透明
   transform: translateY(-50%) scale(0);
 }
