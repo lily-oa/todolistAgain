@@ -24,4 +24,29 @@ btn.addEventListener('click', function (e) {
   data.push(obj);
   input.value = ''; // renderData();
 });
+var cardList = document.querySelector('.card_list'); // 根據當前 tab 渲染畫面  初始值
+
+function renderData() {
+  //如果沒有 data 默認把整個區塊隱藏
+  if (!data.length) {
+    cardList.style.display = 'none';
+    return;
+  } //如果是顯示的
+
+
+  cardList.style.display = 'block';
+  var str = '';
+  var count = 0; //初始值
+
+  data.forEach(function (item, index) {
+    if (!item.checked) {
+      // 計算待完成項目有幾個
+      count += 1;
+
+      if (toggleTab == 'all' || toggleTab == 'work') {
+        str += "\n        <li>\n          <label for=\"\" class=\"checkbox\" for=''>\n            <input type=\"checkbox\" data-num=\"".concat(index, "\">\n            <span>").concat(item.content, "</span>\n          </label>\n          <a href=\"#\" class=\"delete\" data-num=\"").concat(index, "\"></a>\n      </li>\n        ");
+      }
+    }
+  });
+}
 //# sourceMappingURL=all.js.map
