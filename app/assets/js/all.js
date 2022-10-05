@@ -20,6 +20,8 @@ btn.addEventListener('click', function(e){
   let obj = {};
   obj.content = input.value;
   obj.checked = false;
-  console.log(obj);  
+  data.push(obj);
+  input.value = '';
+  // renderData();
 });
 
