@@ -12516,7 +12516,7 @@ input[type="text"]::placeholder {
   display: flex;
 }
 
-.btn_and {
+.btn_add {
   width: 40px;
   height: 40px;
   line-height: 35px;
