@@ -17,5 +17,9 @@ btn.addEventListener('click', function(e){
     alert('此項目名稱不得為空');
     return;
   }
+  let obj = {};
+  obj.content = input.value;
+  obj.checked = false;
+  console.log(obj);  
 });
 
