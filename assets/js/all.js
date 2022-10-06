@@ -44,8 +44,10 @@ function renderData() {
       count += 1;
 
       if (toggleTab == 'all' || toggleTab == 'work') {
-        str += "\n        <li>\n          <label for=\"\" class=\"checkbox\" for=''>\n            <input type=\"checkbox\" data-num=\"".concat(index, "\">\n            <span>").concat(item.content, "</span>\n          </label>\n          <a href=\"#\" class=\"delete\" data-num=\"").concat(index, "\"></a>\n      </li>\n        ");
+        str += "\n        <li>\n          <label for=\"\" class=\"checkbox\" for=''>\n            <input type=\"checkbox\" data-num=\"".concat(index, "\">\n            <span>").concat(item.content, "</span>\n          </label>\n          <a href=\"#\" class=\"delete\" data-num=\"").concat(index, "\"></a>\n        </li>\n        ");
       }
+    } else if (item.checked && toggleTab == 'all' || item.checked && toggleTab == 'done') {
+      str += "\n      <li>\n        <label for=\"\" class=\"checkbox\" for=''>\n          <input type=\"checkbox\" data-num=\"".concat(index, "\">\n          <span>").concat(item.content, "</span>\n        </label>\n      <a href=\"#\" class=\"delete\" data-num=\"").concat(index, "\"></a>\n      </li>\n      ");
     }
   });
 }
