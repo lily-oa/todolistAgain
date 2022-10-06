@@ -52,9 +52,22 @@ function renderData() {
             <span>${item.content}</span>
           </label>
           <a href="#" class="delete" data-num="${index}"></a>
-      </li>
+        </li>
         `;
       }
+    }else if(
+      (item.checked && toggleTab == 'all') || (item.checked && toggleTab == 'done')
+    ){
+      str += `
+      <li>
+        <label for="" class="checkbox" for=''>
+          <input type="checkbox" data-num="${index}">
+          <span>${item.content}</span>
+        </label>
+      <a href="#" class="delete" data-num="${index}"></a>
+      </li>
+      `;
+
     }
   });
 }
