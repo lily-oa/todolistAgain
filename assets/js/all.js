@@ -50,5 +50,7 @@ function renderData() {
       str += "\n      <li>\n        <label for=\"\" class=\"checkbox\" for=''>\n          <input type=\"checkbox\" data-num=\"".concat(index, "\">\n          <span>").concat(item.content, "</span>\n        </label>\n      <a href=\"#\" class=\"delete\" data-num=\"").concat(index, "\"></a>\n      </li>\n      ");
     }
   });
+  list.innerHTML = str;
+  todoLength.textContent = count;
 }
 //# sourceMappingURL=all.js.map
