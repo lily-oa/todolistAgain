@@ -67,8 +67,9 @@ function renderData() {
         </label>
       <a href="#" class="delete" data-num="${index}"></a>
       </li>
-      `;
-        
+      `;  
     }
   });
+  list.innerHTML = str;
+  todoLength.textContent = count;
 }
