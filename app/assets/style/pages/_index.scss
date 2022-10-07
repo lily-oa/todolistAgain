@@ -201,3 +201,7 @@ input[type="text"]::placeholder{
 .checkbox input:checked ~ span::after{
   opacity: 1;
 }
+
+.footer_p{
+  padding: 24px 0 16px 8px;
+}
