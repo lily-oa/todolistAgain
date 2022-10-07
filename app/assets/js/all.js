@@ -56,7 +56,8 @@ function renderData() {
         `;
       }
     }else if(
-      (item.checked && toggleTab == 'all') || (item.checked && toggleTab == 'done')
+      (item.checked && toggleTab == 'all') || 
+      (item.checked && toggleTab == 'done')
     ){
       str += `
       <li>
@@ -67,7 +68,7 @@ function renderData() {
       <a href="#" class="delete" data-num="${index}"></a>
       </li>
       `;
-
+        
     }
   });
 }
