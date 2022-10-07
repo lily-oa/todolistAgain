@@ -12706,4 +12706,8 @@ input[type="text"]::placeholder {
   opacity: 1;
 }
 
+.footer_p {
+  padding: 24px 0 16px 8px;
+}
+
 /*# sourceMappingURL=all.css.map */
