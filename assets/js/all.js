@@ -3,7 +3,7 @@
 // 設置一個陣列，用來存放所有資料
 var data = []; // 獲取清單列表的 ul
 
-var list = document.querySelector('.list'); // 預設為第一個 tab (分頁標籤)為全部
+var list = document.querySelector('.list'); // 預設為第一個 ul.tab>li.active   (分頁標籤)為全部
 
 var toggleTab = 'all'; // 新增
 
@@ -22,7 +22,8 @@ btn.addEventListener('click', function (e) {
   obj.content = input.value;
   obj.checked = false;
   data.push(obj);
-  input.value = ''; // renderData();
+  input.value = '';
+  renderData();
 });
 var cardList = document.querySelector('.card_list'); // 根據當前 tab 渲染畫面  初始值
 
@@ -39,17 +40,18 @@ function renderData() {
   var count = 0; //初始值
 
   data.forEach(function (item, index) {
-    if (!item.checked) {
+    if (!item.checked == true) {
       // 計算待完成項目有幾個
       count += 1;
 
       if (toggleTab == 'all' || toggleTab == 'work') {
-        str += "\n        <li>\n          <label for=\"\" class=\"checkbox\" for=''>\n            <input type=\"checkbox\" data-num=\"".concat(index, "\">\n            <span>").concat(item.content, "</span>\n          </label>\n          <a href=\"#\" class=\"delete\" data-num=\"").concat(index, "\"></a>\n        </li>\n        ");
+        str += "\n                <li>\n                  <label for=\"\" class=\"checkbox\" for=''>\n                    <input type=\"checkbox\" data-num=\"".concat(index, "\">\n                    <span>").concat(item.content, "</span>\n                  </label>\n                  <a href=\"#\" class=\"delete\" data-num=\"").concat(index, "\"></a>\n                </li>\n        ");
       }
     } else if (item.checked && toggleTab == 'all' || item.checked && toggleTab == 'done') {
-      str += "\n      <li>\n        <label for=\"\" class=\"checkbox\" for=''>\n          <input type=\"checkbox\" data-num=\"".concat(index, "\">\n          <span>").concat(item.content, "</span>\n        </label>\n      <a href=\"#\" class=\"delete\" data-num=\"").concat(index, "\"></a>\n      </li>\n      ");
+      str += "\n              <li>\n                <label for=\"\" class=\"checkbox\" for=''>\n                  <input type=\"checkbox\" data-num=\"".concat(index, "\">\n                  <span>").concat(item.content, "</span>\n                </label>\n                <a href=\"#\" class=\"delete\" data-num=\"").concat(index, "\"></a>\n              </li>\n      ");
     }
   });
+  console.log(data);
   list.innerHTML = str;
   todoLength.textContent = count;
 }
