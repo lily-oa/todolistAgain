@@ -4,9 +4,8 @@ let data = [];
 // 獲取清單列表的 ul
 const list = document.querySelector('.list');
 
-// 預設為第一個 tab (分頁標籤)為全部
+// 預設為第一個 ul.tab>li.active   (分頁標籤)為全部
 let toggleTab = 'all';
-
 
 
 // 新增
@@ -24,35 +23,38 @@ btn.addEventListener('click', function(e){
   obj.checked = false;
   data.push(obj);
   input.value = '';
-  // renderData();
+  renderData();
 });
 
 const cardList = document.querySelector('.card_list');
 
 // 根據當前 tab 渲染畫面  初始值
+
 function renderData() {
 //如果沒有 data 默認把整個區塊隱藏
   if(!data.length){
     cardList.style.display = 'none';
     return;
   }
+
   //如果是顯示的
-  cardList.style.display= 'block';
+  cardList.style.display = 'block';
   let str = '';
   let count = 0; //初始值
   data.forEach(function(item, index){
-    if(!item.checked){
+    if(!item.checked == true){
       // 計算待完成項目有幾個
+      
       count += 1;
       if(toggleTab == 'all' || toggleTab == 'work'){
         str += `
-        <li>
-          <label for="" class="checkbox" for=''>
-            <input type="checkbox" data-num="${index}">
-            <span>${item.content}</span>
-          </label>
-          <a href="#" class="delete" data-num="${index}"></a>
-        </li>
+                <li>
+                  <label for="" class="checkbox" for=''>
+                    <input type="checkbox" data-num="${index}">
+                    <span>${item.content}</span>
+                  </label>
+                  <a href="#" class="delete" data-num="${index}"></a>
+                </li>
         `;
       }
     }else if(
@@ -60,16 +62,17 @@ function renderData() {
       (item.checked && toggleTab == 'done')
     ){
       str += `
-      <li>
-        <label for="" class="checkbox" for=''>
-          <input type="checkbox" data-num="${index}">
-          <span>${item.content}</span>
-        </label>
-      <a href="#" class="delete" data-num="${index}"></a>
-      </li>
+              <li>
+                <label for="" class="checkbox" for=''>
+                  <input type="checkbox" data-num="${index}">
+                  <span>${item.content}</span>
+                </label>
+                <a href="#" class="delete" data-num="${index}"></a>
+              </li>
       `;  
     }
   });
+  console.log(data);
   list.innerHTML = str;
   todoLength.textContent = count;
 }
