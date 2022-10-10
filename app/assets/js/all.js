@@ -26,7 +26,54 @@ btn.addEventListener('click', function(e){
   renderData();
 });
 
+//刪除
+list.addEventListener('click', function(e){
+  let i = e.target.getAttribute('data-num');
+  if(e.target.nodeName=='A' && e.target.getAttribute('class') == 'delete'){
+    //暫停網頁跳轉
+    e.preventDefault();
+    // 根據索引值刪除一筆資料
+    data.splice(i, 1);
+  }else{
+    // 點擊刪除項目以外的地方就切換勾選狀態
+    data[i].checked = !data[i].checked;
+  }
+  // 每次更新資料都重新渲染畫面
+  renderData();
+});
 
+// 刪除所有完成項目
+const deleteBtn = document.querySelector('.btn_clear');
+deleteBtn.addEventListener('click', function(e){
+  // 取消預設跳轉事件
+  e.preventDefault();
+  //過濾一下，把沒打勾的項目丟到 newData 再把 data 內容變成 newData
+  let newData = [];
+  data.forEach(function(item){
+    if(!item.checked){
+      newData.push(item);
+    }
+  });
+  data = newData;
+  renderData();
+});
+
+// 切換 tab
+const tabs = document.querySelector('.tab');
+tabs.addEventListener('click', function(e){
+  let all = document.querySelectorAll('.tab li');
+  // 每次點擊 tab 清空所有tab li 的 active
+  all.forEach(function(item){
+    item.setAttribute('class', '');
+  });
+  // 給當前點擊的 tab 添加 active
+  e.target.setAttribute('class', 'active');
+  // 更新當前的 tab
+  toggleTab = e.target.getAttribute('data-tab');
+  renderData();
+});
+
+//------------------------------------------------------------
 
 const cardList = document.querySelector('.card_list');
 
@@ -74,7 +121,6 @@ function renderData() {
       `;  
     }
   });
-  // console.log(data);
   list.innerHTML = str;
-  // todoLength.textContent = count;
+  todoLength.textContent = count;
 }
