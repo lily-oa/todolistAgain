@@ -5,14 +5,14 @@ let data = [];
 const list = document.querySelector('.list');
 
 // 預設為第一個 ul.tab>li.active   (分頁標籤)為全部
-let toggleTab = 'done';
+let toggleTab = 'all';
 
 
 // 新增
 const btn = document.querySelector('.btn_add');
 const input = document.querySelector('#input');
 btn.addEventListener('click', function(e){
-  // 取消預設事件 因為是超連結(a)，每次刪除會自動跳轉網頁
+  // 取消預設事件 因為是超連結(a)，預設會自動跳轉網頁
   e.preventDefault();
   if(input.value.trim() == ''){
     alert('此項目名稱不得為空');
