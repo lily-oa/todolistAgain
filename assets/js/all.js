@@ -86,6 +86,7 @@ function renderData() {
   var str = '';
   var count = 0; //初始值
 
+  var todoLength = document.querySelector('.todoLength');
   data.forEach(function (item, index) {
     if (!item.checked == true) {
       // 計算待完成項目有幾個
