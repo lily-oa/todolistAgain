@@ -90,6 +90,7 @@ function renderData() {
   cardList.style.display = 'block';
   let str = '';
   let count = 0; //初始值
+  let todoLength = document.querySelector('.todoLength');
   data.forEach(function(item, index){
     if(!item.checked == true){
       // 計算待完成項目有幾個
