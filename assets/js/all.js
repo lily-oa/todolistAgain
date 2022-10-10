@@ -5,7 +5,7 @@ var data = []; // 獲取清單列表的 ul li
 
 var list = document.querySelector('.list'); // 預設為第一個 ul.tab>li.active   (分頁標籤)為全部
 
-var toggleTab = 'all'; // 新增
+var toggleTab = 'done'; // 新增
 
 var btn = document.querySelector('.btn_add');
 var input = document.querySelector('#input');
