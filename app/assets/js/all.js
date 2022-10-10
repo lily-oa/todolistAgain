@@ -1,7 +1,7 @@
 // 設置一個陣列，用來存放所有資料
 let data = [];
 
-// 獲取清單列表的 ul
+// 獲取清單列表的 ul li
 const list = document.querySelector('.list');
 
 // 預設為第一個 ul.tab>li.active   (分頁標籤)為全部
@@ -12,7 +12,7 @@ let toggleTab = 'all';
 const btn = document.querySelector('.btn_add');
 const input = document.querySelector('#input');
 btn.addEventListener('click', function(e){
-  // 取消預設事件 不然每次刪除會跑到連結 # 然後網頁會飛到最上面去
+  // 取消預設事件 因為是超連結(a)，每次刪除會自動跳轉網頁
   e.preventDefault();
   if(input.value.trim() == ''){
     alert('此項目名稱不得為空');
@@ -25,6 +25,8 @@ btn.addEventListener('click', function(e){
   input.value = '';
   renderData();
 });
+
+
 
 const cardList = document.querySelector('.card_list');
 
@@ -49,7 +51,7 @@ function renderData() {
       if(toggleTab == 'all' || toggleTab == 'work'){
         str += `
                 <li>
-                  <label for="" class="checkbox" for=''>
+                  <label for="" class="checkbox">
                     <input type="checkbox" data-num="${index}">
                     <span>${item.content}</span>
                   </label>
@@ -63,8 +65,8 @@ function renderData() {
     ){
       str += `
               <li>
-                <label for="" class="checkbox" for=''>
-                  <input type="checkbox" data-num="${index}">
+                <label for="" class="checkbox">
+                  <input type="checkbox" checked data-num="${index}">
                   <span>${item.content}</span>
                 </label>
                 <a href="#" class="delete" data-num="${index}"></a>
@@ -72,7 +74,7 @@ function renderData() {
       `;  
     }
   });
-  console.log(data);
+  // console.log(data);
   list.innerHTML = str;
-  todoLength.textContent = count;
+  // todoLength.textContent = count;
 }
