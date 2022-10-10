@@ -5,7 +5,7 @@ let data = [];
 const list = document.querySelector('.list');
 
 // 預設為第一個 ul.tab>li.active   (分頁標籤)為全部
-let toggleTab = 'all';
+let toggleTab = 'done';
 
 
 // 新增
