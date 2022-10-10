@@ -12553,12 +12553,12 @@ input[type="text"]::placeholder {
   font-weight: bold;
 }
 
-.cart_content {
+.card_content {
   padding: 12px 20px 12px 12px;
 }
 
 @media (min-width: 768px) {
-  .cart_content {
+  .card_content {
     padding: 12px 24px 24px 24px;
   }
 }
